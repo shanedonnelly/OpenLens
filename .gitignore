@@ -1,0 +1,47 @@
+# Dossiers à ignorer (outputs, data, env, cache, etc.)
+__pycache__/
+images/
+csv/
+txt/
+input_images/*
+input_images_analysis/
+input_images_2nd_analysis/
+venv/
+.env/
+.env
+*.egg-info/
+dist/
+build/
+output/
+*.log
+
+# Fichiers de secrets
+secret_key.py
+
+
+# Fichiers de résultats ou temporaires
+*.json
+*.pdf
+*.csv
+*.txt
+
+# Fichiers temporaires système ou éditeur
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
+
+# PyCharm/VSCode
+.idea/
+.vscode/
+
+# Autoriser explicitement google.png
+!google.png
+
+# Autoriser explicitement les scripts Python et shell
+!*.py
+!*.sh
