@@ -146,6 +146,12 @@ python scraper.py --csv path/to/results.csv --output content.txt --max-urls 5 --
 python openai_client.py --txt path/to/content.txt --output analysis.txt
 ```
 
+
+## Result 
+
+In this image, it's just one example of a simple output (where whe ask for a very small description)
+with the corresponding image : 
+![Screenshot](screenshot.png)
 ## Troubleshooting
 
 ### Chrome Issues
@@ -158,7 +164,7 @@ If you encounter issues with Chrome:
 
 If OpenRouter connections fail:
 
-1. Check your API key in `secrets.py`
+1. Check your API key in `secret_key.py`
 2. Verify your internet connection
 3. Check the OpenRouter service status
 

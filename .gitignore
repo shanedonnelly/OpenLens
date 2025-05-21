@@ -45,3 +45,5 @@ Thumbs.db
 # Autoriser explicitement les scripts Python et shell
 !*.py
 !*.sh
+
+secret_key.py
