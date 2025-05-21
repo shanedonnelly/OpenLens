@@ -1,6 +1,6 @@
 # Google Lens Result Scrapper + AI Image Analysis Pipeline + FastAPI end-to-end service
 
-This project provides a full python pipeline for analyzing images using Google Lens output. and generating an analysis using a large language model. The LLM provider could be any OpenAI SDK compatible LLM provider. I personally use [OpenRouter](https://openrouter.ai/docs/quickstart) wich can give easy access free llm providers. 
+This project provides a full python pipeline for analyzing images using Google Lens output. and generating an analysis using a large language model. The LLM provider could be any OpenAI SDK compatible LLM provider. I personally use [OpenRouter](https://openrouter.ai/docs/quickstart) wich can give easy access free llm providers. You could even use local models like Ollama to use the full pipeline unlimited. 
 
 Quick explaination of the pipeline : 
 - from an image, the scrapper upload it on Google Lens and scroll for more content,  wich result in a csv that contains the urls of the related websites (not the images url, this could be in th future) and the url description
