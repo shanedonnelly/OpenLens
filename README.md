@@ -1,6 +1,12 @@
-# Google Lens Result Scraper + AI Image Analysis Pipeline + FastAPI end-to-end service
+# Google Lens Result Scrapper + AI Image Analysis Pipeline + FastAPI end-to-end service
 
 This project provides a full python pipeline for analyzing images using Google Lens output. and generating an analysis using a large language model. The LLM provider could be any OpenAI SDK compatible LLM provider. I personally use [OpenRouter](https://openrouter.ai/docs/quickstart) wich can give easy access free llm providers. 
+
+Quick explaination of the pipeline : 
+- from an image, the scrapper upload it on Google Lens and scroll for more content,  wich result in a csv that contains the urls of the related websites (not the images url, this could be in th future) and the url description
+- a more simple beautiful soop scrapper scrapps the main inner html body of the top urls (of the csv) and put all together in a txt. (it is the context containing anything that could be usefull)
+- everything is send with a special system prompt to a LLM provider of your choice, wich only return text
+-the text is then return back by fastapi
 
 With `run_api.sh` you can run a really small api to which you can upload base64 encoded images, and get a analysis of it has a response, depending on the system prompt. Every configuration can be done my modifying `config.py`, from LLM provider, scrapping sizes, selenium headless mode, to prompting settings like sytem prompt and temperature. 
 
@@ -25,17 +31,20 @@ The pipeline consists of three main modules that can be run independently or tog
 
 1. Clone the repository:
    ```
-   git clone <repository-url>
-   cd <repository-directory>
+   git clone https://github.com/shanedonnelly/OpenLens.git
+   cd OpenLens
    ```
 
-2. Install the required dependencies:
+2. Set yourselft in a python env and install the required dependencies:
    ```
    pip install -r requirements.txt
    ```
 
-3. Configure the `secrets.py` file with your OpenRouter API key.
-
+3. If you do the full pipeline, provide your LLM API key in a file called : 
+secret_key.py wich would look like :
+```python
+API_KEY = "<your_key>" 
+```
 ## Configuration
 
 The project's behavior can be customized through the `config.py` file:
@@ -99,7 +108,7 @@ Start the FastAPI server:
 
 The API will be available at http://localhost:8000
 
-Send a request with a base64-encoded image:
+Send a request with a base64-encoded image like this:
 
 ```bash
 BASE64_IMAGE=$(base64 -w 0 google.png)
