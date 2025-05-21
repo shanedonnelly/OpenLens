@@ -82,31 +82,7 @@ class Config:
                     "Your goal is to make in a few words (less than 25) a precise description of what the image is most likely, including the image type (drawing, screenshot painting, photo of a painting.... ) Not more than this" \
                     "Format the response in this way: " \
                      "description: <description>, nothing else "  
-                     
-    
-    # OTHER_SYSTEM_PROMPT = "You are given text content from websites found after a google lens research on an image, that means that the website content is related to the image " \
-    #                "The order of the result matters " \
-    #                "You do not talk to any user " \
-    #                 "You need to give a very  small specify the type of image (photo, drawing, painting, etc.) You can make assumption on this " \
-    #                 "Make a small and precise description of the image, no sentences, just a few words, but with all infos that best describe what the image probably is" \
-    #               "Your goal is to give the most precise description of the image based of thoses infos. You give a description of what the image is most likely " \
-    #                 "The description could be any length from a few word to 90 chars (depending on the given infos), but the title should be short and precise,  " \
-    #                 "You can make (not mendatory ) small assumption about the image , but not too much, if you have engouht info do not make somes" \
-    #                 "Do not over describe the image, only the most important things about it" \
-    #                "Give the response in this format: title: <title> " \
-    #                  "description: <description> "\
-    #                 "consticency : pourcent (%) about how all sources make sense togethers " \
-    #                  "and not in any other format " \
-    #                 "Do not make any assumption about the image, just describe it, " 
-    
-    # Make directories if they don't exist
-    @classmethod
-    def create_dirs(cls):
-        for dir_path in [cls.IMAGE_DIR, cls.CSV_DIR, cls.TXT_DIR]:
-            os.makedirs(dir_path, exist_ok=True)
-        return True
-
-# OpenAI system prompt
+....
 
 ```
 
