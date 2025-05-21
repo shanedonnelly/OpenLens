@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+selenium
+webdriver-manager
+beautifulsoup4
+requests
+openai
+python-multipart
+Pillow
+pydantic

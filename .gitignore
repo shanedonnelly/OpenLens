@@ -47,3 +47,6 @@ Thumbs.db
 !*.sh
 
 secret_key.py
+
+!requirements.txt
+

@@ -1,16 +1,16 @@
-# Google Lens Result Scrapper + AI Image Analysis Pipeline + FastAPI end-to-end service
+# Google Lens Result scraper + AI Image Analysis Pipeline + FastAPI end-to-end service
 
 This project provides a full python pipeline for analyzing images using Google Lens output. and generating an analysis using a large language model. The LLM provider could be any OpenAI SDK compatible LLM provider. I personally use [OpenRouter](https://openrouter.ai/docs/quickstart) wich can give easy access to free llm providers. You could even use local models like Ollama to use the full pipeline unlimited. 
 
 Quick explaination of the pipeline : 
-- from an image, the scrapper upload it on Google Lens and scroll for more content,  wich result in a csv that contains the urls of the related websites (not the images url, this could be in th future) and the url description
-- a more simple beautiful soop scrapper scrapps the main inner html body of the top urls (of the csv) and put all together in a txt. (it is the context containing anything that could be usefull)
+- from an image, the scraper upload it on Google Lens and scroll for more content,  wich result in a csv that contains the urls of the related websites (not the images url, this could be in th future) and the url description
+- a more simple beautiful soop scraper scraps the main inner html body of the top urls (of the csv) and put all together in a txt. (it is the context containing anything that could be usefull)
 - everything is send with a special system prompt to a LLM provider of your choice, wich only return text
 -the text is then return back by fastapi
 
-With `run_api.sh` you can run a really small api to which you can upload base64 encoded images, and get a analysis of it has a response, depending on the system prompt. Every configuration can be done my modifying `config.py`, from LLM provider, scrapping sizes, selenium headless mode, to prompting settings like sytem prompt and temperature. 
+With `run_api.sh` you can run a really small api to which you can upload base64 encoded images, and get a analysis of it has a response, depending on the system prompt. Every configuration can be done my modifying `config.py`, from LLM provider, scraping sizes, selenium headless mode, to prompting settings like sytem prompt and temperature. 
 
-The main part is the Google Lens scrapping. I'm aware that a web-scrapping doesn't respect the rules of usage of most website, particularly Google. However this project aims to make a non production tools for people to make experiment with image analysis, making new datasets, all for free without any local computations.
+The main part is the Google Lens scraping. I'm aware that a web-scraping doesn't respect the rules of usage of most website, particularly Google. However this project aims to make a non production tools for people to make experiment with image analysis, making new datasets, all for free without any local computations.
 ## Project Overview
 
 The pipeline consists of three main modules that can be run independently or together:

@@ -3,8 +3,8 @@ from pydantic import BaseModel
 import base64
 import os
 import uuid
-from selenium_lens_scrapper import run_google_lens_search
-from bs4_small_scrapper import scrape_first_urls
+from selenium_lens_scraper import run_google_lens_search
+from bs4_small_scraper import scrape_first_urls
 from llm_analysis import get_llm_analysis
 import logging
 from config import Config
