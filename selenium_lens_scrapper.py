@@ -50,9 +50,10 @@ def setup_anti_detection_driver():
     
     # Driver setup
     try:
-        # First try to use local chromedriver
-        webdriver_service = Service("/usr/bin/chromedriver")
-        driver = webdriver.Chrome(service=webdriver_service, options=options)
+        # can be done like this also :
+        # webdriver_service = Service("/usr/bin/chromedriver")
+        # driver = webdriver.Chrome(service=webdriver_service, options=options)
+        driver = webdriver.Chrome(options=options)
     except Exception as e:
         logger.warning(f"Local chromedriver failed: {e}, trying ChromeDriverManager")
         try:
